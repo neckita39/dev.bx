@@ -1,6 +1,6 @@
 <?php
 require "movies (1).php";
-function printWarning()
+function printWarning(): void
 {
 	echo "Invalid type of age";
 }
