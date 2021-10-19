@@ -1,0 +1,8 @@
+<?php
+require "funcs.php";
+echo "Enter your age: ";
+$input_age=readline();
+if (isCorrect($input_age))
+{
+	moviesList($movies, $input_age);
+}
