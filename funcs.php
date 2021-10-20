@@ -18,7 +18,7 @@ function isCorrect($input_age) : bool
 	}
 }
 
-function moviesList(array $movies, int $input_age): void
+function getMoviesList(array $movies, int $input_age): void
 {
 	$count=0;
 	foreach ($movies as $movie)
