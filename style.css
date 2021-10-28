@@ -29,7 +29,6 @@
 	margin: 170px 30px 1087px 29px;
 }
 .menu-item{
-
 	display: block;
 	border-bottom: 1px solid rgba(242, 242, 242, 0.1);
 }
@@ -43,7 +42,6 @@
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 22px;
-	/* or 122% */
 	align-items: center;
 	text-transform: uppercase;
 	color: #B7B7B7;
@@ -55,5 +53,4 @@
 .menu-item a:active{
 	color: #FFFFFF;
 	background: rgba(255, 255, 255, 0.05);
-
 }
