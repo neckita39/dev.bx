@@ -54,3 +54,6 @@
 	color: #FFFFFF;
 	background: rgba(255, 255, 255, 0.05);
 }
+.menu-item--active a:active{
+	background: tomato;
+}
