@@ -1,9 +1,15 @@
+CREATE TABLE IF NOT EXISTS language
+(
+	ID varchar(2) not null ,
+	NAME varchar(500) not null,
+	PRIMARY KEY (ID)
+);
+
 CREATE TABLE IF NOT EXISTS movie_title
 (
 	MOVIE_ID int not null,
 	LANGUAGE_ID varchar(2) not null,
 	TITLE varchar(500) not null,
-
 	FOREIGN KEY FK_MOVIE_ID (MOVIE_ID)
 	REFERENCES movie(ID)
 	ON UPDATE RESTRICT
@@ -12,13 +18,6 @@ CREATE TABLE IF NOT EXISTS movie_title
 	REFERENCES language(ID)
 	ON UPDATE RESTRICT
 	ON DELETE RESTRICT
-	);
-
-CREATE TABLE IF NOT EXISTS language
-(
-	ID varchar(2) not null ,
-	NAME varchar(500) not null,
-	PRIMARY KEY (ID)
 	);
 INSERT INTO language(ID, NAME)
 VALUES ('ru', 'русский'),
