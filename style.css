@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap');
 .wrapper {
 	display: flex;
 	overflow: hidden;
@@ -16,17 +16,45 @@
 	background: #F2F2F2;
 }
 .header {
+
 	height: 88px;
 	background: #FFFFFF;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
 .content {
+	flex: 1;
 	overflow: auto;
+	padding-left: 44px;
+	padding-top: 20px;
 }
+
+
 .menu {
 	display: flex;
 	flex-direction: column;
-	margin: 170px 30px 1087px 29px;
+	margin: 0 30px;
+}
+.logo {
+	margin: 72px 104px 58px 81px;
+	display: block;
+}
+
+.logo a {
+	font-family: 'Bebas Neue',sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 96px;
+	line-height: 22px;
+
+	align-items: center;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #43B0ED;
+}
+
+.logo a:hover{
+	color: tomato;
 }
 .menu-item {
 	display: block;
@@ -54,12 +82,12 @@
 	color: #FFFFFF;
 	background: rgba(255, 255, 255, 0.05);
 }
-.content {
-	margin: 20px 0 0 44px;
-}
+
 .movie-list--item {
+	margin-right: 20px;
+	margin-bottom: 20px;
 	display: inline-block;
-	margin: 15px;
+
 	width: 370px;
 	height: 700px;
 	background: #FFFFFF;
@@ -148,4 +176,18 @@
 	height: 20px;
 	background: url("images/icon-clock.svg");
 
+}
+.info {
+	margin: 200px;
+	font-family: 'Bebas Neue',sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 96px;
+	line-height: 22px;
+
+	align-items: center;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #43B0ED;
 }
