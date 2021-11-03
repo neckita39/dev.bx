@@ -19,11 +19,11 @@ require_once "help-func.php";
 <div class="wrapper">
 	<div class="sidebar">
 		<div class="logo">
-			<a href="index.html">bitflix</a>
+			<a href="layout.php">bitflix</a>
 		</div>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="#chtoto-tam.html">Главная</a>
+				<a href="layout.php">Главная</a>
 			</li><!--menu-item--active-->
 			<li class="menu-item">
 				<a href="#chtoto-tam.html">Триллер</a>
@@ -38,12 +38,17 @@ require_once "help-func.php";
 				<a href="#chtoto-tam.html">Фантастика</a>
 			</li>
 			<li class="menu-item">
-				<a href="#chtoto-tam.html">Избранное</a>
+				<a href="workinginprocess.html">Избранное</a>
 			</li>
 		</ul>
 	</div>
 	<div class="container">
-		<div class="header"></div>
+		<div class="header">
+			<div class="add-movie-button">
+				<a href="workinginprocess.html">Добавить фильм</a>
+			</div>
+			<div class="header-wrapper"></div>
+		</div>
 		<div class="content">
 			<div class="movie-list">
 			<?php foreach ($movies as $movie): ?>
@@ -58,8 +63,8 @@ require_once "help-func.php";
 						<div class="movie-list--item-bottom">
 							<div class="movie-list--item-time">
 								<div class="movie-list--item-time-icon"></div>
-								<?= $movie['duration']?></div>
-							<div class="movie-list--item-info"><?= implode($movie['genres'])?></div>
+								<?= formatDuration($movies, $movie['id'])?></div>
+							<div class="movie-list--item-info"><?= cutGenres($movies, $movie['id'])?></div>
 						</div>
 					</div>
 				</div>
