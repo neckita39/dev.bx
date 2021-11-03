@@ -84,10 +84,9 @@
 }
 
 .movie-list--item {
-	margin-right: 20px;
-	margin-bottom: 20px;
-	display: inline-block;
 
+	display: inline-block;
+	margin: 20px 20px 20px 20px;
 	width: 370px;
 	height: 700px;
 	background: #FFFFFF;
@@ -97,6 +96,7 @@
 }
 .movie-list--item-image{
 	display: block;
+	width: 370px;
 	height: 430px;
 	background-size: cover;
 	border-radius: 20px 20px 0 0;
@@ -130,7 +130,7 @@
 }
 .movie-list--item-description {
 	min-height: 100px;
-	margin: 0 20px 23px 20px;
+	margin: 0 20px 23px 0;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
