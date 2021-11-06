@@ -8,6 +8,7 @@
 	display: block;
 	width: 400px;
 	background: #383838;
+	overflow: scroll;
 }
 .container {
 	display: flex;
@@ -53,6 +54,7 @@
 .menu {
 	display: flex;
 	flex-direction: column;
+	flex: 1;
 	margin: 0 30px;
 }
 .logo {
@@ -81,6 +83,7 @@
 	border-bottom: 1px solid rgba(242, 242, 242, 0.1);
 }
 .menu-item a {
+	overflow: auto;
 	display: flex;
 	padding: 0 16.8px 1.71px 14.83px;
 	height: 68.29px;
@@ -106,6 +109,7 @@
 .movie-list--item {
 
 	display: inline-block;
+	position: relative;
 	margin: 20px 20px 20px 20px;
 	width: 370px;
 	height: 700px;
@@ -113,6 +117,50 @@
 	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
 	font-family: 'Open Sans', sans-serif;
+}
+.movie-list--item-overlay {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9;
+	background: rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+}
+.movie-list--item:hover .movie-list--item-overlay{
+	opacity: 1;
+}
+.movie-list--item-more {
+	display: inline-flex;
+	background: #4EE7B0;
+	border-radius: 7px;
+	width: 220px;
+	height: 56px;
+	justify-content: center;
+
+
+
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 56px;
+	/* identical to box height, or 311% */
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #FFFFFF;
+
+
+
+
+
 }
 .movie-list--item-image{
 	display: block;
@@ -127,6 +175,7 @@
 	padding: 12px 0 15px 0;
 }
 .movie-list--item-title {
+
 	font-style: normal;
 	font-weight: 600;
 	font-size: 22px;
@@ -185,12 +234,15 @@
 
 
 }
+.movie-list--item-genres {
+
+}
 .movie-list--item-time-icon {
 	left: 0;
 	position: absolute;
 	width: 20px;
 	height: 20px;
-	background: url("images/icon-clock.jpg");
+	background: url("../../images/icon-clock.jpg");
 
 }
 .info {
@@ -209,10 +261,5 @@
 
 .header-wrapper {
 
-	display: block;
-	height: 1px;
-	padding-left: 41px;
-	padding-bottom: 22px;
-	padding-top: 20px;
-	background: tomato;
+
 }

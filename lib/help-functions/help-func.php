@@ -1,7 +1,7 @@
 <?php
-require_once "movies.php";
-function cutDescription(array $movies, int $id): string
+function cutDescription( array $movies, int $id): string
 {
+
 	if (isset($movies))
 	{
 		foreach ($movies as $movie)
