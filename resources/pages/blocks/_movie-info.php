@@ -8,17 +8,17 @@
 	</div>
 	<div class="movie-list--item-image" style="background-image: url(img/<?= $movie['id'] ?>.jpg)"></div>
 	<div class="movie-list--item-head">
-		<div class="movie-list--item-title"><?= cutTitle($movies, $movie['id']) ?></div>
-		<div class="movie-list--item-subtitle"><?= $movie['original-title'] ?></div>
+		<div class="movie-list--item-title">Тут инфа о фильме</div>
+		<div class="movie-list--item-subtitle"><?= findById($movies, $movie['id'])?></div>
 		<div class="movie-list--item-wrapper"></div>
-		<div class="movie-list--item-description"><?= cutDescription($movies, $movie['id']) ?></div>
+		<div class="movie-list--item-description"><?= findById($movies, $movie['id']) ?></div>
 		<div class="movie-list--item-bottom">
 			<div class="movie-list--item-time">
 				<div class="movie-list--item-time-icon"></div>
-				<div class="movie-list--item-genres"><?= formatDuration($movies, $movie['id']) ?></div>
+				<div class="movie-list--item-genres"><?= findById($movies, $movie['id']) ?></div>
 
 			</div>
-			<div class="movie-list--item-info">    <?= cutGenres($movies, $movie['id']) ?></div>
+			<div class="movie-list--item-info">    <?= findById($movies, $movie['id']) ?></div>
 		</div>
 	</div>
 </div>
