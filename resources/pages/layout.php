@@ -17,17 +17,17 @@
 <div class="wrapper">
 	<div class="sidebar">
 		<div class="logo">
-			<a href="layout.php">bitflix</a>
+			<a href="index.php">bitflix</a>
 		</div>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="layout.php">Главная</a>
+				<a href="index.php">Главная</a>
 			</li>
 			<?php
 			foreach ($genres as $genre): ?>
 				<li class="menu-item">
 					<a href="layout.php"><?= $genre ?></a>
-				</li><!--menu-item--active-->
+				</li>
 			<?php
 			endforeach; ?>
 			<li class="menu-item">

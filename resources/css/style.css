@@ -1,33 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap');
+
 .wrapper {
 	display: flex;
 	overflow: hidden;
 	height: 100vh;
 }
+
 .sidebar {
 	display: block;
 	width: 400px;
 	background: #383838;
 	overflow: scroll;
 }
+
 .container {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	background: #F2F2F2;
+	background: #f2f2f2;
 }
+
 .header {
 	position: relative;
 	height: 88px;
-	background: #FFFFFF;
+	background: #fff;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
+
 .content {
 	flex: 1;
 	overflow: auto;
 	padding-left: 44px;
 	padding-top: 20px;
 }
+
 .add-movie-button {
 	position: absolute;
 	right: 51px;
@@ -35,9 +41,10 @@
 	width: 158px;
 	height: 40px;
 	margin-top: 26px;
-	background: #4EE7B0;
+	background: #4ee7b0;
 	border-radius: 7px;
 }
+
 .add-movie-button a {
 	display: flex;
 	flex: 1;
@@ -49,21 +56,23 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	justify-content: center;
-	color: #FFFFFF;
+	color: #fff;
 }
+
 .menu {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
 	margin: 0 30px;
 }
+
 .logo {
 	margin: 72px 104px 58px 81px;
 	display: block;
 }
 
 .logo a {
-	font-family: 'Bebas Neue',sans-serif;
+	font-family: 'Bebas Neue', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 96px;
@@ -72,16 +81,18 @@
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #43B0ED;
+	color: #43b0ed;
 }
 
-.logo a:hover{
+.logo a:hover {
 	color: tomato;
 }
+
 .menu-item {
 	display: block;
 	border-bottom: 1px solid rgba(242, 242, 242, 0.1);
 }
+
 .menu-item a {
 	overflow: auto;
 	display: flex;
@@ -95,14 +106,16 @@
 	line-height: 22px;
 	align-items: center;
 	text-transform: uppercase;
-	color: #B7B7B7;
+	color: #b7b7b7;
 }
+
 .menu-item:last-child {
 	border: none;
 }
+
 .menu-item a:hover,
 .menu-item--active a {
-	color: #FFFFFF;
+	color: #fff;
 	background: rgba(255, 255, 255, 0.05);
 }
 
@@ -113,11 +126,12 @@
 	margin: 20px 20px 20px 20px;
 	width: 370px;
 	height: 700px;
-	background: #FFFFFF;
+	background: #fff;
 	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
 	font-family: 'Open Sans', sans-serif;
 }
+
 .movie-list--item-overlay {
 	display: flex;
 	position: absolute;
@@ -133,17 +147,18 @@
 	justify-content: center;
 	opacity: 0;
 }
-.movie-list--item:hover .movie-list--item-overlay{
+
+.movie-list--item:hover .movie-list--item-overlay {
 	opacity: 1;
 }
+
 .movie-list--item-more {
 	display: inline-flex;
-	background: #4EE7B0;
+	background: #4ee7b0;
 	border-radius: 7px;
 	width: 220px;
 	height: 56px;
 	justify-content: center;
-
 
 
 	font-family: 'Open Sans', sans-serif;
@@ -155,48 +170,51 @@
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #FFFFFF;
-
-
-
+	color: #fff;
 
 
 }
-.movie-list--item-image{
+
+.movie-list--item-image {
 	display: block;
 	width: 370px;
 	height: 430px;
 	background-size: cover;
 	border-radius: 20px 20px 0 0;
 }
+
 .movie-list--item-head {
 	display: block;
 	margin: 0 20px 0 20px;
 	padding: 12px 0 15px 0;
 }
+
 .movie-list--item-title {
 
 	font-style: normal;
 	font-weight: 600;
 	font-size: 22px;
 	line-height: 30px;
-	color: #333333;
+	color: #333;
 
 
 }
+
 .movie-list--item-subtitle {
 	margin-bottom: 15px;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 25px;
-	color: #999999;
+	color: #999;
 }
+
 .movie-list--item-wrapper {
 	display: block;
 	height: 1px;
 	background: #f2f2f2;
 }
+
 .movie-list--item-description {
 	min-height: 100px;
 	margin: 0 20px 23px 0;
@@ -204,7 +222,7 @@
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 20px;
-	color: #333333;
+	color: #333;
 }
 
 .movie-list--item-bottom {
@@ -221,7 +239,7 @@
 	font-size: 12px;
 	line-height: 22px;
 	padding-left: 25px;
-	color: #CCCCCC;
+	color: #ccc;
 }
 
 .movie-list--item-info {
@@ -230,13 +248,15 @@
 	line-height: 22px;
 	text-align: right;
 	text-transform: uppercase;
-	color: #CCCCCC;
+	color: #ccc;
 
 
 }
+
 .movie-list--item-genres {
 
 }
+
 .movie-list--item-time-icon {
 	left: 0;
 	position: absolute;
@@ -245,9 +265,10 @@
 	background: url("../../images/icon-clock.jpg");
 
 }
+
 .info {
 	margin: 200px;
-	font-family: 'Bebas Neue',sans-serif;
+	font-family: 'Bebas Neue', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 96px;
@@ -256,7 +277,7 @@
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #43B0ED;
+	color: #43b0ed;
 }
 
 .header-wrapper {
