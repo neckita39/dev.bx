@@ -1,11 +1,8 @@
 <?php
-function getFilmsByGenre(array $movies, string $genre): string
+function getFilmsByGenre(array $movies, string $genres)
 {
-	foreach ($movies as $movie)
-	{
-		if (in_array($genre, $movie['genres']))
-		{
-			return "${movie['title']} \n";
-		}
-	}
+	return array_filter($movies, function($movie) use ($genres){
+		if (in_array($genres, $movie['genres']))
+			return $movie['id'];
+	});
 }

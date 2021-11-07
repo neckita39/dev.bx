@@ -4,7 +4,7 @@
 ?>
 <div class="movie-list--item">
 	<div class="movie-list--item-overlay">
-		<a href="movie-info.php" class="movie-list--item-more">Подробнее</a>
+		<a href="movie-info.php?id=<?= $movie['id']?>" class="movie-list--item-more">Подробнее</a>
 	</div>
 	<div class="movie-list--item-image" style="background-image: url(img/<?= $movie['id'] ?>.jpg)"></div>
 	<div class="movie-list--item-head">

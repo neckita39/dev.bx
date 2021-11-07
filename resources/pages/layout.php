@@ -26,7 +26,7 @@
 			<?php
 			foreach ($genres as $genre): ?>
 				<li class="menu-item">
-					<a href="layout.php"><?= $genre ?></a>
+					<a href="genre-list.php?genre=<?= $genre?>"><?= $genre ?></a>
 				</li>
 			<?php
 			endforeach; ?>

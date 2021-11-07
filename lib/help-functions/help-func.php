@@ -69,18 +69,9 @@ function formatDuration(array $movies, int $id): string
 	return "movies array is not found";
 }
 
-function findById(array $movies, int $id): string
+function findById(array $movies, int $id)
 {
-	if (isset($movies))
-	{
-		foreach ($movies as $movie)
-		{
-			if ($movie["id"] == $id)
-			{
-
-				return "Нашелся ${movie['title']}";
-			}
-		}
-	}
-	return "movies array is not found";
+	return array_filter($movies, function($movie) use ($id){
+		return $movie['id']===$id;
+	});
 }

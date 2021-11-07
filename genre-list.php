@@ -7,10 +7,9 @@ require_once "./data/movies.php";
 require_once "./lib/help-functions/help-func.php";
 require_once "./lib/filter-functions/filter-functions.php";
 require_once "./lib/template-functions/template-functions.php";
-//$movies=findById($movies, 1);
-if (isset($_GET['id']))
+if (isset($_GET['genre']))
 {
-	$movies=findById($movies, $_GET['id']);
+	$movies=getFilmsByGenre($movies, $_GET['genre']);
 }
 $moviesListPage=renderTemplate("./resources/pages/movies-list.php", [
 	'movies' => $movies
