@@ -13,33 +13,33 @@ require_once "./lib/help-functions/help-func.php";
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
-	<link rel="stylesheet" href="resources/css/reset.css">
-	<link rel="stylesheet" href="resources/css/style.css">
+	<link rel="stylesheet" href="../resources/css/reset.css">
+	<link rel="stylesheet" href="../resources/css/style.css">
 </head>
 <body>
 <div class="wrapper">
 	<div class="sidebar">
 		<div class="logo">
-			<a href="resources/pages/layout.php">bitflix</a>
+			<a href="../resources/pages/layout.php">bitflix</a>
 		</div>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="resources/pages/layout.php">Главная</a>
+				<a href="../resources/pages/layout.php">Главная</a>
 			</li>
 			<?php foreach ($genres as $genre):?>
 				<li class="menu-item">
-					<a href="resources/pages/layout.php"><?= $genre?></a>
+					<a href="../resources/pages/layout.php"><?= $genre?></a>
 				</li><!--menu-item--active-->
 			<?php endforeach;?>
 			<li class="menu-item">
-				<a href="resources/pages/workinginprocess.html">Избранное</a>
+				<a href="../resources/pages/workinginprocess.html">Избранное</a>
 			</li>
 		</ul>
 	</div>
 	<div class="container">
 		<div class="header">
 			<div class="add-movie-button">
-				<a href="resources/pages/workinginprocess.html">Добавить фильм</a>
+				<a href="../resources/pages/workinginprocess.html">Добавить фильм</a>
 			</div>
 			<div class="header-wrapper"></div>
 		</div>
