@@ -31,14 +31,14 @@
 			<?php
 			endforeach; ?>
 			<li class="menu-item">
-				<a href="workinginprocess.html">Избранное</a>
+				<a href="./resources/pages/workinginprocess.html">Избранное</a>
 			</li>
 		</ul>
 	</div>
 	<div class="container">
 		<div class="header">
 			<div class="add-movie-button">
-				<a href="workinginprocess.html">Добавить фильм</a>
+				<a href="./resources/pages/workinginprocess.html">Добавить фильм</a>
 			</div>
 			<div class="header-wrapper"></div>
 		</div>
