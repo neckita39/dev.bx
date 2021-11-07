@@ -43,28 +43,7 @@
 			<div class="header-wrapper"></div>
 		</div>
 		<div class="content">
-			<div class="movie-info">
-				<div class="movie-info-title">Головоломка (2015)</div>
-				<div class="movie-info-original-title">Inside Out</div>
-				<div class="movie-title-wrapper"></div>
-				<div class="movie-image-wrapper">
-				<div class="movie-image">
-
-				</div>
-			</div>
-				<div class="movie-rating">RATING</div>
-				<div class="movie-about-movie">
-					О Фильме
-					<div class="movie-year-released">Год производства:2012
-
-					</div>
-					<div class="movie-director">Режиссер:</div>
-					<div class="movie-actors">В главных ролях: </div>
-				</div>
-				<div class="movie-description">Описание:</div>
-				<div class="movie-description-data">Райли — обычная 11-летняя школьница, и, как у каждого из нас, ее поведение определяют пять базовых эмоций: Радость, Печаль, Страх, Гнев и Брезгливость. Эмоции живут в сознании девочки и каждый день помогают ей справляться с проблемами, руководя всеми ее поступками. До поры до времени эмоции живут дружно, но вдруг оказывается, что Райли и ее родителям предстоит переезд из небольшого уютного городка в шумный и людный мегаполис. Каждая из эмоций считает, что именно она лучше прочих знает, что нужно делать в этой непростой ситуации, и в голове у девочки наступает полная неразбериха. Чтобы наладить жизнь в большом городе, освоиться в новой школе и подружиться с одноклассниками, эмоциям Райли предстоит снова научиться работать сообща.</div>
-
-		</div>
+			<?= $content ?>
 
 
 	</div>

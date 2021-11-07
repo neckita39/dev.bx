@@ -12,7 +12,7 @@ if (isset($_GET['id']))
 {
 	$movies=findById($movies, $_GET['id']);
 }
-$moviesListPage=renderTemplate("./resources/pages/movies-list.php", [
+$moviesListPage=renderTemplate("./resources/pages/fullinfo.php", [
 	'movies' => $movies
 ]);
 

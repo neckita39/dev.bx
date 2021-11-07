@@ -287,12 +287,12 @@
 	left: 46px;
 	top: 40px;
 	width: 1170px;
-	height: 985px;
+	height: 1100px;
 	background: #fff;
 }
 .movie-info-title {
+	width: 1170px;
 	display: block;
-	width: 720px;
 	height: 64px;
 	margin-left: 45px;
 	margin-top: 35px;
@@ -304,8 +304,31 @@
 
 	color: #333333;
 }
+#activate-div{display: none;}
+.favorite-bottom {
+	display: inline-block;
+	position: absolute;
+	left: 1104px;
+	width: 43px;
+	height: 37px;
+	background: url("../../images/icon-like.jpg");
+	cursor: pointer;
+}
+#activate-div:checked ~ label
+.favorite-bottom{
+	display: inline-block;
+	position: absolute;
+	left: 1104px;
+	width: 43px;
+	height: 37px;
+	cursor: pointer;
+	background: url("../../images/icon-with-like.jpg");
+}
+
+
 .movie-info-original-title {
-	width: 299px;
+	display: block;
+
 	height: 42px;
 	margin-left: 48px;
 	margin-top: 8px;
@@ -317,6 +340,27 @@
 	line-height: 33px;
 
 	color: #999999;
+}
+.movie-rating-number {
+	display: inline-block;
+	width: 39px;
+	height: 32px;
+	background: rgba(242, 242, 242, 0.1);
+	border: 3px solid #CCCCCC;
+	box-sizing: border-box;
+	border-radius: 7px;
+}
+
+.movie-rating-number-data {
+	display: flex;
+	align-content: center;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 25px;
+	justify-content: center;
+	color: #CCCCCC;
 }
 .movie-title-wrapper {
 	/* Rectangle 4 */
@@ -334,8 +378,7 @@
 	bottom: 13px;
 	left: 12px;
 	right: 12px;
-
-	background: tomato;
+	background-size: cover;
 }
 .movie-image-wrapper {
 	position: absolute;
@@ -344,7 +387,7 @@
 	margin-left: 31px;
 	margin-top: 21px;
 
-	background: #F2F2F2;
+
 }
 
 .movie-rating {
@@ -368,7 +411,7 @@
 	color: #333;
 }
 .movie-year-released {
-	width: 256px;
+	width: 160px;
 	height: 22px;
 	margin-top: 22px;
 	font-family: Open Sans;
@@ -381,13 +424,20 @@
 }
 
 .movie-year-released-data {
-	white-space: nowrap;
-	justify-content: space-between;
-	position: relative;
-	right:0;
+	width: 256px;
+	height: 22px;
+	margin-top: 18px;
+	margin-left: 776px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 22px;
+	/* identical to box height */
+	olor: #000000;
 }
 .movie-director{
-	width: 256px;
+	width: 144px;
 	height: 22px;
 	margin-top: 22px;
 	font-family: Open Sans;
@@ -398,9 +448,21 @@
 	color: #666666;
 	margin-top: 15px;
 }
-
+.movie-director-data {
+	width: 392px;
+	height: 22px;
+	margin-top: 14px;
+	margin-left: 776px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 22px;
+	/* identical to box height */
+	olor: #000000;
+}
 .movie-actors {
-	width: 256px;
+	width: 144px;
 	height: 22px;
 	margin-top: 22px;
 	font-family: Open Sans;
@@ -411,12 +473,24 @@
 	color: #666666;
 	margin-top: 15px;
 }
-
+.movie-actors-data{
+	width: 392px;
+	height: 22px;
+	margin-top: 14px;
+	margin-left: 776px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 22px;
+	/* identical to box height */
+	olor: #000000;
+}
 .movie-description {
 	width: 164px;
 	height: 37px;
 	margin-left: 557px;
-	margin-top: 165px;
+	margin-top: 140px;
 
 	font-family: Open Sans;
 	font-style: normal;
@@ -426,6 +500,7 @@
 
 	color: #333333;
 }
+
 .movie-description-data {
 	display: flex;
 	flex-direction: row;
