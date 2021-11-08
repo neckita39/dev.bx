@@ -75,49 +75,29 @@
 	background: url("./../../images/logo.png");
 }
 
-.logo a {
-	font-family: 'Bebas Neue', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 96px;
-	line-height: 22px;
-	align-items: center;
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: #43b0ed;
-}
-
-.logo a:hover {
-	color: tomato;
-}
 
 .menu-item {
 	display: block;
 	border-bottom: 1px solid rgba(242, 242, 242, 0.1);
 	font-family: 'Open Sans', sans-serif;
-
-
 	font-style: normal;
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 22px;
-
-
 }
-.menu-item-link{
 
-}
 .menu-item-link:hover,
-.menu-item-link.active{
+.menu-item-link.active {
 	color: #fff;
 	background: rgba(255, 255, 255, 0.05);
 }
+
 .menu-item-genre-link:hover,
 .menu-item-genre-link.active {
 	color: #fff;
 	background: rgba(255, 255, 255, 0.05);
 }
+
 .menu-item a {
 	overflow: auto;
 	display: flex;
@@ -179,14 +159,11 @@
 	width: 220px;
 	height: 56px;
 	justify-content: center;
-
-
 	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 56px;
-	/* identical to box height, or 311% */
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -273,10 +250,6 @@
 
 }
 
-.movie-list--item-genres {
-
-}
-
 .movie-list--item-time-icon {
 	left: 0;
 	position: absolute;
@@ -309,21 +282,26 @@
 	height: 1100px;
 	background: #fff;
 }
+
 .movie-info-title {
 	width: 1170px;
 	display: block;
 	height: 64px;
 	margin-left: 45px;
 	margin-top: 35px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 48px;
 	line-height: 65px;
 
-	color: #333333;
+	color: #333;
 }
-#activate-div{display: none;}
+
+#activate-div {
+	display: none;
+}
+
 .favorite-bottom {
 	display: inline-block;
 	position: absolute;
@@ -333,8 +311,9 @@
 	background: url("../../images/icon-like.jpg");
 	cursor: pointer;
 }
+
 #activate-div:checked ~ label
-.favorite-bottom{
+.favorite-bottom {
 	display: inline-block;
 	position: absolute;
 	left: 1104px;
@@ -347,25 +326,23 @@
 
 .movie-info-original-title {
 	display: block;
-
 	height: 42px;
 	margin-left: 48px;
 	margin-top: 8px;
-
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 24px;
 	line-height: 33px;
-
-	color: #999999;
+	color: #999;
 }
+
 .movie-age-restriction {
 	display: inline-block;
 	width: 39px;
 	height: 32px;
 	background: rgba(242, 242, 242, 0.1);
-	border: 3px solid #CCCCCC;
+	border: 3px solid #ccc;
 	box-sizing: border-box;
 	border-radius: 7px;
 }
@@ -373,22 +350,23 @@
 .movie-age-restriction-data {
 	display: flex;
 	align-content: center;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 25px;
 	justify-content: center;
-	color: #CCCCCC;
+	color: #ccc;
 }
+
 .movie-title-wrapper {
-	/* Rectangle 4 */
 	width: 1112px;
 	height: 1px;
 	margin-left: 48px;
 	margin-top: 17px;
-	background: #CCCCCC;
+	background: #ccc;
 }
+
 .movie-image {
 	position: relative;
 	width: 469px;
@@ -399,14 +377,13 @@
 	right: 12px;
 	background-size: cover;
 }
+
 .movie-image-wrapper {
 	position: absolute;
 	width: 493px;
 	height: 754px;
 	margin-left: 31px;
 	margin-top: 21px;
-
-
 }
 
 .movie-rating {
@@ -417,16 +394,16 @@
 	margin-left: 575px;
 	margin-top: 36px;
 }
+
 .movie-rating-visual {
 	position: relative;
 	display: inline-block;
 	width: 27px;
 	height: 27px;
 	top: 4px;
-	border: 5px solid #FFFFFF;
+	border: 5px solid #fff;
 	box-sizing: border-box;
 }
-
 
 .movie-rating-circle {
 	position: relative;
@@ -434,47 +411,47 @@
 	margin-left: 12px;
 	width: 55px;
 	height: 55px;
-	background: #E78818;
+	background: #e78818;
 	border-radius: 50%;
 }
+
 .movie-rating-data {
 	display: flex;
-	color: #FFFFFF;
+	color: #fff;
 	flex: 1;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 22px;
 	line-height: 30px;
-	/* identical to box height */
 	padding-top: 12px;
 	align-items: center;
 	justify-content: center;
 }
+
 .movie-about-movie {
 	width: 164px;
 	height: 37px;
 	margin-left: 557px;
 	margin-top: 105px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 33px;
-
 	color: #333;
 }
+
 .movie-year-released {
 	width: 160px;
 	height: 22px;
 	margin-top: 22px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 22px;
-	/* identical to box height */
-	color: #666666;
+	color: #666;
 }
 
 .movie-year-released-data {
@@ -482,77 +459,75 @@
 	height: 22px;
 	margin-top: 18px;
 	margin-left: 776px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 22px;
-	/* identical to box height */
-	olor: #000000;
+	сolor: #000;
 }
-.movie-director{
+
+.movie-director {
 	width: 144px;
 	height: 22px;
-	margin-top: 22px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 22px;
-	color: #666666;
+	color: #666;
 	margin-top: 15px;
 }
+
 .movie-director-data {
 	width: 392px;
 	height: 22px;
 	margin-top: 14px;
 	margin-left: 776px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 22px;
-	/* identical to box height */
-	olor: #000000;
+	сolor: #000;
 }
+
 .movie-actors {
 	width: 144px;
 	height: 22px;
-	margin-top: 22px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 22px;
-	color: #666666;
+	color: #666;
 	margin-top: 15px;
 }
-.movie-actors-data{
+
+.movie-actors-data {
 	width: 392px;
 	height: 22px;
 	margin-top: 14px;
 	margin-left: 776px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 22px;
-	/* identical to box height */
-	olor: #000000;
+	сolor: #000;
 }
+
 .movie-description {
 	width: 164px;
 	height: 37px;
 	margin-left: 557px;
 	margin-top: 140px;
-
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 33px;
-
-	color: #333333;
+	color: #333;
 }
 
 .movie-description-data {
@@ -561,12 +536,10 @@
 	margin-left: 557px;
 	margin-top: 15px;
 	width: 577px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
 	line-height: 28px;
-
-
-	color: #000000;
+	color: #000;
 }
