@@ -16,8 +16,8 @@
 	<div class="movie-info-original-title">
 		<?=$movie['original-title']?>
 
-		<div class="movie-rating-number">
-			<div class="movie-rating-number-data"><?= $movie['age-restriction']?>+</div>
+		<div class="movie-age-restriction">
+			<div class="movie-age-restriction-data"><?= $movie['age-restriction']?>+</div>
 			</div>
 
 	</div>
@@ -27,7 +27,19 @@
 	<div class="movie-image-wrapper">
 		<div class="movie-image" style="background-image: url(img/<?= $movie['id'] ?>.jpg)"></div>
 	</div>
-	<div class="movie-rating">RATING</div>
+	<div class="movie-rating">
+		<?php for($inc=1; $inc<=round($movie['rating'], PHP_ROUND_HALF_DOWN); $inc++):?>
+		<div class="movie-rating-visual" style="background:#E78818 "></div>
+		<?php endfor; ?>
+		<?php for($inc=round($movie['rating'], PHP_ROUND_HALF_DOWN); $inc<10; $inc++):?>
+			<div class="movie-rating-visual" style="background:#F2F2fF "></div>
+		<?php endfor; ?>
+	<div class="movie-rating-circle">
+		<div class="movie-rating-data">
+			<?=$movie['rating']?>
+		</div>
+	</div>
+	</div>
 	<div class="movie-about-movie">
 		О Фильме
 		<div class="movie-year-released">Год производства:

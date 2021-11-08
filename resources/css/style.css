@@ -341,7 +341,7 @@
 
 	color: #999999;
 }
-.movie-rating-number {
+.movie-age-restriction {
 	display: inline-block;
 	width: 39px;
 	height: 32px;
@@ -351,7 +351,7 @@
 	border-radius: 7px;
 }
 
-.movie-rating-number-data {
+.movie-age-restriction-data {
 	display: flex;
 	align-content: center;
 	font-family: Open Sans;
@@ -391,11 +391,46 @@
 }
 
 .movie-rating {
-	width: 336px;
+	position: absolute;
+	display: block;
+	width: 450px;
 	height: 55px;
-	background: tomato;
 	margin-left: 575px;
 	margin-top: 36px;
+}
+.movie-rating-visual {
+	position: relative;
+	display: inline-block;
+	width: 27px;
+	height: 27px;
+	top: 4px;
+	border: 5px solid #FFFFFF;
+	box-sizing: border-box;
+}
+
+
+.movie-rating-circle {
+	position: relative;
+	display: inline-block;
+	margin-left: 12px;
+	width: 55px;
+	height: 55px;
+	background: #E78818;
+	border-radius: 50%;
+}
+.movie-rating-data {
+	display: flex;
+	color: #FFFFFF;
+	flex: 1;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 30px;
+	/* identical to box height */
+	padding-top: 12px;
+	align-items: center;
+	justify-content: center;
 }
 .movie-about-movie {
 	width: 164px;
