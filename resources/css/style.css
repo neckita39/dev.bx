@@ -70,6 +70,9 @@
 .logo {
 	margin: 72px 104px 58px 81px;
 	display: block;
+	width: 211px;
+	height: 68px;
+	background: url("./../../images/logo.png");
 }
 
 .logo a {
@@ -92,20 +95,36 @@
 .menu-item {
 	display: block;
 	border-bottom: 1px solid rgba(242, 242, 242, 0.1);
-}
+	font-family: 'Open Sans', sans-serif;
 
+
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+
+
+}
+.menu-item-link{
+
+}
+.menu-item-link:hover,
+.menu-item-link.active{
+	color: #fff;
+	background: rgba(255, 255, 255, 0.05);
+}
+.menu-item-genre-link:hover,
+.menu-item-genre-link.active {
+	color: #fff;
+	background: rgba(255, 255, 255, 0.05);
+}
 .menu-item a {
 	overflow: auto;
 	display: flex;
 	padding: 0 16.8px 1.71px 14.83px;
 	height: 68.29px;
-	text-decoration: none;
-	font-family: 'Open Sans', sans-serif;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 22px;
 	align-items: center;
+	text-decoration: none;
 	text-transform: uppercase;
 	color: #b7b7b7;
 }

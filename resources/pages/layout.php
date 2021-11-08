@@ -1,6 +1,8 @@
 <?php
 /** @var array $genres */
+/** @var array $config */
 /** @var string $content */
+/** @var string $currentPage */
 ?>
 
 <!doctype html>
@@ -17,21 +19,21 @@
 <div class="wrapper">
 	<div class="sidebar">
 		<div class="logo">
-			<a href="index.php">bitflix</a>
 		</div>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="index.php">Главная</a>
+				<a class="menu-item-link <?= $currentPage==="index"?"active":""?>" href="index.php"><?= $config['menu']['index']?></a>
+
 			</li>
 			<?php
 			foreach ($genres as $genre): ?>
 				<li class="menu-item">
-					<a href="genre-list.php?genre=<?= $genre?>"><?= $genre ?></a>
+					<a class="menu-item-genre-link <?=$currentPage===$genre?"active":""?>"href="genre-list.php?genre=<?= $genre?>"><?= $genre ?></a>
 				</li>
 			<?php
 			endforeach; ?>
 			<li class="menu-item">
-				<a href="./resources/pages/workinginprocess.html">Избранное</a>
+				<a class="menu-item-link <?= $currentPage==="favorites-list"?"active":""?>" href="favorites-list.php"><?= $config['menu']['favorite']?></a>
 			</li>
 		</ul>
 	</div>

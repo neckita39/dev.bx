@@ -6,7 +6,7 @@ function cutDescription( array $movies, int $id): string
 	{
 		foreach ($movies as $movie)
 		{
-			if ($movie["id"] == $id)
+			if ($movie["id"] === $id)
 			{
 				$movie["description"] = mb_strimwidth($movie['description'], 0, 160, "...");
 
@@ -23,7 +23,7 @@ function cutTitle(array $movies, int $id): string
 	{
 		foreach ($movies as $movie)
 		{
-			if ($movie["id"] == $id)
+			if ($movie["id"] === $id)
 			{
 				$movie["title"] = mb_strimwidth($movie['title'], 0, 25, "...");
 
@@ -40,7 +40,7 @@ function cutGenres(array $movies, int $id): string
 	{
 		foreach ($movies as $movie)
 		{
-			if ($movie["id"] == $id)
+			if ($movie["id"] === $id)
 			{
 				$str = implode(",", $movie['genres']);
 				$str = mb_strimwidth($str, 0, 30, "...");
@@ -58,7 +58,7 @@ function formatDuration(array $movies, int $id): string
 	{
 		foreach ($movies as $movie)
 		{
-			if ($movie["id"] == $id)
+			if ($movie["id"] === $id)
 			{
 				$hours_dur=(string)date('G:i',mktime(0,$movie['duration']));
 				$minuts_dur=(string)$movie['duration'];
@@ -69,10 +69,5 @@ function formatDuration(array $movies, int $id): string
 	return "movies array is not found";
 }
 
-function findById(array $movies, int $id)
-{
-	return array_filter($movies, function($movie) use ($id){
-		return $movie['id']===$id;
-	});
-}
+
 

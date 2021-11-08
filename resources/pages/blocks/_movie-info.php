@@ -25,7 +25,7 @@
 
 	<div class="movie-title-wrapper"></div>
 	<div class="movie-image-wrapper">
-		<div class="movie-image" style="background-image: url(img/<?= $movie['id'] ?>.jpg)"></div>
+		<div class="movie-image" style="background-image: url(<?= "img/".$movie['id'].".jpg" ?>)"></div>
 	</div>
 	<div class="movie-rating">
 		<?php for($inc=1; $inc<=round($movie['rating'], PHP_ROUND_HALF_DOWN); $inc++):?>
