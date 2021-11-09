@@ -28,10 +28,10 @@
 
 			</li>
 			<?php
-			foreach ($genres as $genre): ?>
+			foreach ($genres as $genre => $code): ?>
 				<li class="menu-item">
 					<a class="menu-item-genre-link <?= $currentPage === $genre ? "active"
-						: "" ?>" href="genre-list.php?genre=<?= $genre ?>"><?= $genre ?></a>
+						: "" ?>" href="index.php?genre=<?= $genre ?>"><?= $code ?></a>
 				</li>
 			<?php
 			endforeach; ?>
@@ -43,10 +43,20 @@
 	</div>
 	<div class="container">
 		<div class="header">
-			<div class="add-movie-button">
-				<a href="./resources/pages/workinginprocess.html">Добавить фильм</a>
+			<div class="header-item">
+				<div class="search-icon"></div>
+
 			</div>
-			<div class="header-wrapper"></div>
+			<div class="search">
+				<div class="search-data">Поиск по каталогу...</div>
+			</div>
+			<div class="search-wrapper"></div>
+			<div class="find-button">
+			<div class="find-button-data">Искать</div>
+			</div>
+			<div class="add-movie-button">
+				<a class="add-movie-button-data"href="add-movie.php">Добавить фильм</a>
+			</div>
 		</div>
 		<div class="content">
 			<?= $content ?>

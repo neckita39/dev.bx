@@ -1,72 +1,33 @@
 <?php
-function cutDescription( array $movies, int $id): string
+function cutDescription(string $desc): string
 {
+	$desc = mb_strimwidth($desc, 0, 160, "...");
+	return $desc;
+}
 
-	if (isset($movies))
+function cutTitle(string $title): string
+{
+	$title = mb_strimwidth($title, 0, 25, "...");
+	return $title;
+}
+
+function cutGenres(array $moviesGenre): string
+{
+	if (isset($moviesGenre))
 	{
-		foreach ($movies as $movie)
-		{
-			if ($movie["id"] === $id)
-			{
-				$movie["description"] = mb_strimwidth($movie['description'], 0, 160, "...");
-
-				return "${movie['description']}";
-			}
-		}
+		$str = implode(",", $moviesGenre);
+		$str = mb_strimwidth($str, 0, 30, "...");
+		return $str;
 	}
 	return "movies array is not found";
 }
 
-function cutTitle(array $movies, int $id): string
+function formatDuration(string $duration): string
 {
-	if (isset($movies))
-	{
-		foreach ($movies as $movie)
-		{
-			if ($movie["id"] === $id)
-			{
-				$movie["title"] = mb_strimwidth($movie['title'], 0, 25, "...");
+	$hours_dur=(string)date('G:i',mktime(0,$duration));
+	$minuts_dur=(string)$duration;
+	return "$minuts_dur"." мин. / "."$hours_dur";
 
-				return "${movie['title']}";
-			}
-		}
-	}
-	return "movies array is not found";
-}
-
-function cutGenres(array $movies, int $id): string
-{
-	if (isset($movies))
-	{
-		foreach ($movies as $movie)
-		{
-			if ($movie["id"] === $id)
-			{
-				$str = implode(",", $movie['genres']);
-				$str = mb_strimwidth($str, 0, 30, "...");
-
-				return $str;
-			}
-		}
-	}
-	return "movies array is not found";
-}
-
-function formatDuration(array $movies, int $id): string
-{
-	if (isset($movies))
-	{
-		foreach ($movies as $movie)
-		{
-			if ($movie["id"] === $id)
-			{
-				$hours_dur=(string)date('G:i',mktime(0,$movie['duration']));
-				$minuts_dur=(string)$movie['duration'];
-				return "$minuts_dur"." мин. / "."$hours_dur";
-			}
-		}
-	}
-	return "movies array is not found";
 }
 
 

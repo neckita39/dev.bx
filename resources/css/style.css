@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap');
 .wrapper {
 	display: flex;
 	overflow: hidden;
@@ -21,12 +20,34 @@
 }
 
 .header {
-	position: relative;
 	height: 88px;
 	background: #fff;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
-
+.header-item {
+	position: absolute;
+	width: 1173px;
+	height: 41px;
+	margin-top: 26px;
+	margin-left: 43px;
+	color: #FFFFFF;
+}
+.search-icon {
+	position: relative;
+	top: 8px;
+	left: 8px;
+	width: 24px;
+	height: 24px;
+	background: url("./../../images/search.png");
+}
+.search {
+	position: relative;
+	left: 81px;
+	top: 27px;
+	width: 492px;
+	height: 40px;
+	color: #FFFFFF;
+}
 .content {
 	position: relative;
 	flex: 1;
@@ -34,31 +55,67 @@
 	padding-left: 44px;
 	padding-top: 20px;
 }
-
+.search-data {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 40px;
+	font-family: 'Open Sans', sans-serif;
+	color: #999999;
+	text-decoration: none;
+	justify-content: center;
+}
+.search-wrapper {
+	position: relative;
+	left: 81px;
+	top: 26px;
+	width: 777px;
+	height: 1px;
+	background: #C4C4C4;
+}
+.find-button {
+	position: absolute;
+	left: 1265px;
+	top: 26px;
+	width: 89px;
+	height: 40px;
+	text-align: center;
+	background: #E7A04E;
+	border-radius: 7px;
+}
+.find-button-data{
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 40px;
+	font-family: 'Open Sans', sans-serif;
+	color: #FFFFFF;
+}
 .add-movie-button {
 	position: absolute;
-	right: 51px;
-	top: 0;
+	left: 1500px;
+	top: 26px;
+
 	width: 158px;
 	height: 40px;
-	margin-top: 26px;
 	background: #4ee7b0;
 	border-radius: 7px;
 }
 
-.add-movie-button a {
-	display: flex;
-	flex: 1;
-	font-family: 'Open Sans', sans-serif;
+.add-movie-button-data{
+	left:20px;
+	position: relative;
 	font-style: normal;
-	font-weight: bold;
+	font-weight: 700;
 	font-size: 12px;
 	line-height: 40px;
+	font-family: 'Open Sans', sans-serif;
+	color: #FFFFFF;
 	text-transform: uppercase;
 	text-decoration: none;
 	justify-content: center;
-	color: #fff;
 }
+
 
 .menu {
 	display: flex;
@@ -226,6 +283,7 @@
 	display: flex;
 	flex: 1;
 	margin-left: 0;
+	margin-top: 48px;
 	white-space: nowrap;
 	justify-content: space-between;
 }
