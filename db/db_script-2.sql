@@ -36,7 +36,7 @@ FROM movie_title mt;
 
 SELECT  a.NAME, COUNT(ma.MOVIE_ID)
 FROM  actor a
-	LEFT JOIN movie_actor ma on a.ID = ma.ACTOR_ID
+	INNER JOIN movie_actor ma on a.ID = ma.ACTOR_ID
 GROUP BY a.NAME;
 
 #6. Вывести жанры, в которых никогда не снимался Арнольд Шварценеггер*.
@@ -55,7 +55,42 @@ FROM movie m
 	     INNER JOIN movie_title mt on m.ID = mt.MOVIE_ID
 	     INNER JOIN movie_genre mg on m.ID = mg.MOVIE_ID
 WHERE mt.LANGUAGE_ID='ru'
-GROUP BY mt.TITLE HAVING COUNT(*)>3
+GROUP BY mt.TITLE HAVING COUNT(*)>3;
 
 	#8. Вывести самый популярный жанр для каждого актёра.
 #   Формат вывода: Имя актёра, Жанр, в котором у актёра больше всего фильмов.
+
+SELECT title.NAME, title.GENRE_NAME
+FROM (SELECT a.NAME, g.NAME as GENRE_NAME
+FROM genre g
+	INNER JOIN movie_genre mg on g.ID = mg.GENRE_ID
+	INNER JOIN movie_actor ma on mg.MOVIE_ID = ma.MOVIE_ID
+	INNER JOIN actor a on ma.ACTOR_ID = a.ID
+    GROUP BY a.NAME, g.NAME) title
+ORDER BY COUNT(title.GENRE_NAME)
+LIMIT 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
