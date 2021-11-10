@@ -7,7 +7,6 @@
 <?php
 foreach ($movies as $movie): ?>
 	<?= renderTemplate("./resources/pages/blocks/_movie.php", [
-		'movies' => $movies,
 		'movie' => $movie
 		])?>
 <?php

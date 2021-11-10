@@ -12,12 +12,15 @@ require_once "./config/app.php";
 if (isset($_GET['genre']))
 {
 	$movies=getFilmsByGenre($movies, $genres, $_GET['genre']);
+	$currentPage=$_GET['genre'];
+}
+else
+{
+	$currentPage=basename(__FILE__, ".php");
 }
 $moviesListPage=renderTemplate("./resources/pages/movies-list.php", [
 	'movies' => $movies
 ]);
-$currentPage=basename(__FILE__, ".php");
-
 renderLayout($moviesListPage, [
 	'config' => $config,
 	'genres' => $genres,
