@@ -60,15 +60,17 @@ GROUP BY mt.TITLE HAVING COUNT(*)>3;
 	#8. Вывести самый популярный жанр для каждого актёра.
 #   Формат вывода: Имя актёра, Жанр, в котором у актёра больше всего фильмов.
 
-SELECT title.NAME, title.GENRE_NAME
-FROM (SELECT a.NAME, g.NAME as GENRE_NAME
-FROM genre g
-	INNER JOIN movie_genre mg on g.ID = mg.GENRE_ID
-	INNER JOIN movie_actor ma on mg.MOVIE_ID = ma.MOVIE_ID
-	INNER JOIN actor a on ma.ACTOR_ID = a.ID
-    GROUP BY a.NAME, g.NAME) title
-ORDER BY COUNT(title.GENRE_NAME)
-LIMIT 1
+SELECT actor.NAME,
+       (
+	       SELECT g.NAME
+	       FROM genre g
+		            INNER JOIN movie_genre mg on g.ID = mg.GENRE_ID
+		            INNER JOIN movie_actor ma on mg.MOVIE_ID = ma.MOVIE_ID
+		            INNER JOIN actor a on ma.ACTOR_ID = a.ID WHERE a.ID = actor.ID
+	       GROUP BY g.NAME
+	       ORDER BY COUNT(*) DESC
+	       LIMIT 1)
+FROM actor;
 
 
 
