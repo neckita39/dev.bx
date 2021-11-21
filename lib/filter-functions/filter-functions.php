@@ -7,8 +7,8 @@ function getFilmsByGenre(array $movies, array $genres, string $currentGenre): ar
 			$translateGenre=$code;
 
 	}
-	return array_filter($movies, function($movie) use ($translateGenre){
-		if (in_array($translateGenre, $movie['genres']))
+	return array_filter($movies, static function($movie) use ($translateGenre){
+		if (in_array($translateGenre, $movie['genres'], true))
 		{
 			return $movie['id'];
 		}
@@ -16,7 +16,7 @@ function getFilmsByGenre(array $movies, array $genres, string $currentGenre): ar
 }
 function findById(array $movies, string $id): array
 {
-	return array_filter($movies, function($movie) use ($id){
+	return array_filter($movies, static function($movie) use ($id){
 		return $movie['id']===(int)$id;
 	});
 }

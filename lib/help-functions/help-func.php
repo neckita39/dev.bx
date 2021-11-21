@@ -26,7 +26,7 @@ function formatDuration(string $duration): string
 {
 	$hours_dur=(string)date('G:i',mktime(0,$duration));
 	$minuts_dur=(string)$duration;
-	return "$minuts_dur"." мин. / "."$hours_dur";
+	return (string)$minuts_dur ." мин. / ". (string)$hours_dur;
 
 }
 
