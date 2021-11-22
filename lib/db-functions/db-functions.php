@@ -57,7 +57,6 @@ function getMovies(mysqli $database, array $genres, string $code = null): array
 		$error = mysqli_errno($database) . " : " . mysqli_error($database);
 		trigger_error($error, E_USER_ERROR);
 	}
-	$moviesList = [];
 	if ($code)
 	{
 		$query .= "	INNER JOIN movie_genre g on m.ID = g.MOVIE_ID INNER JOIN genre g2 on g.GENRE_ID = g2.ID AND g2.CODE='$code'";
@@ -68,6 +67,7 @@ function getMovies(mysqli $database, array $genres, string $code = null): array
 			trigger_error($error, E_USER_ERROR);
 		}
 	}
+	$moviesList=[];
 	while ($row = mysqli_fetch_assoc($result))
 	{
 		$moviesList[] = [
@@ -124,6 +124,7 @@ function getMovieFromDBByID(mysqli $database, int $id, array $actors): array
 		$error = mysqli_errno($database) . " : " . mysqli_error($database);
 		trigger_error($error, E_USER_ERROR);
 	}
+	$moviesList=[];
 	while ($row = mysqli_fetch_assoc($result))
 	{
 		$moviesList[] = [
