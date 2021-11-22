@@ -37,8 +37,8 @@ function getMovieActors(array $movieActors=[]): string
 function formatDuration(string $duration): string
 {
 	$hours_dur=(string)date('G:i',mktime(0,$duration));
-	$minuts_dur=(string)$duration;
-	return (string)$minuts_dur ." мин. / ". (string)$hours_dur;
+	$minutes_dur=(string)$duration;
+	return (string)$minutes_dur ." мин. / ". (string)$hours_dur;
 }
 
 
