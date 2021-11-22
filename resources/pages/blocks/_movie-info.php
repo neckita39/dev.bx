@@ -16,9 +16,8 @@
 	</div>
 	<div class="movie-info-original-title">
 		<?= $movie['original-title'] ?>
-
 		<div class="movie-age-restriction">
-			<div class="movie-age-restriction-data"><?= $movie['age-restriction'] ?>+</div>
+			<div class="movie-age-restriction-data"><?= $movie['age_restriction'] ?>+</div>
 		</div>
 
 	</div>
@@ -54,11 +53,10 @@
 		<div class="movie-actors">В главных ролях:</div>
 	</div>
 
-	<div class="movie-year-released-data"><?= $movie['release-date'] ?>
-
+	<div class="movie-year-released-data"><?= $movie['release_date'] ?>
 	</div>
 	<div class="movie-director-data"><?= $movie['director'] ?></div>
-	<div class="movie-actors-data"><?= implode(", ", $movie['cast']) ?></div>
+	<div class="movie-actors-data"><?= getMovieActors($movie['actors']) ?></div>
 	<div class="movie-description">Описание:</div>
 	<div class="movie-description-data"><?= $movie['description'] ?></div>
 

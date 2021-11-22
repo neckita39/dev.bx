@@ -22,6 +22,18 @@ function cutGenres(array $moviesGenre)
 	return mb_strimwidth(substr($genre, 0, -2), 0, 30, "...");
 }
 
+function getMovieActors(array $movieActors): string
+{
+	$actor="";
+	if (isset($movieActors))
+	{
+		foreach ($movieActors as $item)
+		{
+			$actor .=$item['name'].", ";
+		}
+	}
+	return substr($actor, 0, -2);
+}
 function formatDuration(string $duration): string
 {
 	$hours_dur=(string)date('G:i',mktime(0,$duration));

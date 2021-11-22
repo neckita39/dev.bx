@@ -5,7 +5,6 @@
 /** @var string $title */
 /** @var string $content */
 /** @var array $genres */
-/** @var mysqli $database */
 /** @var array $connectionData */
 
 require_once "./data/db_init.php";
@@ -16,7 +15,6 @@ require_once "./lib/template-functions/template-functions.php";
 require_once "./config/app.php";
 $database=connectToDatabase($connectionData);
 $genres=getGenres($database);
-$movies=getMovies($database, $genres);
 
 if (isset($_GET['genre']))
 {
@@ -25,6 +23,7 @@ if (isset($_GET['genre']))
 }
 else
 {
+	$movies=getMovies($database, $genres);
 	$currentPage=basename(__FILE__, ".php");
 }
 $moviesListPage=renderTemplate("./resources/pages/movies-list.php", [

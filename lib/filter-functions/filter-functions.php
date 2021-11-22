@@ -5,7 +5,6 @@ function getFilmsByGenre(array $movies, array $genres, string $currentGenre): ar
 	{
 		if ($currentGenre===$genre)
 			$translateGenre=$code;
-
 	}
 	return array_filter($movies, static function($movie) use ($translateGenre){
 		if (in_array($translateGenre, $movie['genres'], true))
