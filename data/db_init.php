@@ -4,10 +4,10 @@ function connectToDatabase(array $connectionData): mysqli
 	$database=mysqli_init();
 	$connectionResult=mysqli_real_connect(
 		$database,
-		$host=$connectionData['host'],
-		$username=$connectionData['username'],
-		$password=$connectionData['password'],
-		$dbName=$connectionData['dbName']
+		$connectionData['host'],
+		$connectionData['username'],
+		$connectionData['password'],
+		$connectionData['dbName']
 	);
 	if(!$connectionResult)
 	{

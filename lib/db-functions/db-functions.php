@@ -39,7 +39,7 @@ function getActors(mysqli $database): array
 	return $actors;
 }
 
-function getQuery(mysqli $database): string
+function getQuery(): string
 {
 	return "SELECT m.ID as ID, TITLE, ORIGINAL_TITLE, DESCRIPTION, DURATION, AGE_RESTRICTION, RELEASE_DATE, RATING, d.NAME as DIRECTOR,
        (SELECT GROUP_CONCAT(mg.GENRE_ID) FROM movie_genre mg WHERE mg.MOVIE_ID = m.ID) as GENRES,
@@ -50,7 +50,7 @@ function getQuery(mysqli $database): string
 
 function getMovies(mysqli $database, array $genres, string $code = null): array
 {
-	$query = getQuery($database);
+	$query = getQuery();
 	$result = mysqli_query($database, $query);
 	if (!$result)
 	{
@@ -109,7 +109,7 @@ function parseActors(string $movieActors, array $actors): array
 
 function getMovieFromDBByID(mysqli $database, int $id, array $actors): array
 {
-	$query = getQuery($database);
+	$query = getQuery();
 	$result = mysqli_query($database, $query);
 	if (!$result)
 	{
