@@ -9,7 +9,7 @@ function cutTitle(string $title): string
 	return mb_strimwidth($title, 0, 25, "...");
 }
 
-function cutGenres(array $moviesGenre=[])
+function cutGenres(array $moviesGenre=[]): string
 {
 	$genre="";
 	if (isset($moviesGenre))
