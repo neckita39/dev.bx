@@ -1,6 +1,5 @@
 <?php
 /** @var array $genres */
-
 /** @var array $config */
 /** @var string $content */
 /** @var string $currentPage */
@@ -28,10 +27,10 @@
 
 			</li>
 			<?php
-			foreach ($genres as $genre => $code): ?>
+			foreach ($genres as $genre): ?>
 				<li class="menu-item">
-					<a class="menu-item-genre-link <?= $currentPage === $genre ? "active"
-						: "" ?>" href="index.php?genre=<?= $genre ?>"><?= $code ?></a>
+					<a class="menu-item-genre-link <?= $currentPage === $genre['CODE'] ? "active"
+						: "" ?>" href="index.php?genre=<?= $genre['CODE'] ?>"><?= $genre['NAME'] ?></a>
 				</li>
 			<?php
 			endforeach; ?>

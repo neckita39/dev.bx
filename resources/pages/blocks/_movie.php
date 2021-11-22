@@ -1,6 +1,6 @@
 <?php
 /** @var array $movie */
-
+/** @var array $genres */
 /** @var array $movies */
 ?>
 <div class="movie-list--item">
@@ -9,7 +9,7 @@
 	</div>
 	<div class="movie-list--item-image" style="background-image: url(<?= "img/" . $movie['id'] . ".jpg" ?>)"></div>
 	<div class="movie-list--item-head">
-		<div class="movie-list--item-title"><?= cutTitle($movie['title']) ?></div>
+		<div class="movie-list--item-title"><?= cutTitle($movie["title"])?></div>
 		<div class="movie-list--item-subtitle"><?= cutTitle($movie['original-title']) ?></div>
 		<div class="movie-list--item-wrapper"></div>
 		<div class="movie-list--item-description"><?= cutDescription($movie['description']) ?></div>
@@ -19,7 +19,7 @@
 				<div class="movie-list--item-genres"><?= formatDuration($movie['duration']) ?></div>
 
 			</div>
-			<div class="movie-list--item-info">    <?= cutGenres($movie['genres']) ?></div>
+			<div class="movie-list--item-info"> <?= cutGenres($movie['genres'])?>  </div>
 		</div>
 	</div>
 </div>

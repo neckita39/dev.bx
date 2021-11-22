@@ -1,25 +1,25 @@
 <?php
 function cutDescription(string $desc): string
 {
-	$desc = mb_strimwidth($desc, 0, 160, "...");
-	return $desc;
+	return mb_strimwidth($desc, 0, 160, "...");
 }
 
 function cutTitle(string $title): string
 {
-	$title = mb_strimwidth($title, 0, 25, "...");
-	return $title;
+	return mb_strimwidth($title, 0, 25, "...");
 }
 
-function cutGenres(array $moviesGenre): string
+function cutGenres(array $moviesGenre)
 {
+	$genre="";
 	if (isset($moviesGenre))
 	{
-		$str = implode(",", $moviesGenre);
-		$str = mb_strimwidth($str, 0, 30, "...");
-		return $str;
+		foreach ($moviesGenre as $item)
+		{
+			$genre .=$item['NAME'].", ";
+		}
 	}
-	return "movies array is not found";
+	return mb_strimwidth(substr($genre, 0, -2), 0, 30, "...");
 }
 
 function formatDuration(string $duration): string
@@ -29,6 +29,8 @@ function formatDuration(string $duration): string
 	return (string)$minuts_dur ." мин. / ". (string)$hours_dur;
 
 }
+
+
 
 
 

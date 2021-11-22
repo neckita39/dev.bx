@@ -1,7 +1,6 @@
 <?php
 /** @var array $movies */
-
-
+/** @var array $genres */
 ?>
 
 <?php

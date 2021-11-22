@@ -1,0 +1,79 @@
+<?php
+function getGenres(mysqli $database): array
+{
+	$queryGenre="SELECT * FROM genre";
+	$result=mysqli_query($database, $queryGenre);
+	if (!$result)
+	{
+		$error=mysqli_errno($database)." : ".mysqli_error($database);
+		trigger_error($error, E_USER_ERROR);
+	}
+	$genres=[];
+	while($row = mysqli_fetch_assoc($result))
+	{
+		$genres[$row['ID']]=[
+			'CODE'=>$row['CODE'],
+			'NAME'=>$row['NAME']
+		];
+	}
+	return $genres;
+}
+
+function getMovies(mysqli $database, array $genres, string $code=null): array
+{
+	$query="SELECT m.ID as ID, TITLE, ORIGINAL_TITLE, DESCRIPTION, DURATION, AGE_RESTRICTION, RELEASE_DATE, RATING, d.NAME as DIRECTOR,
+       (SELECT GROUP_CONCAT(mg.GENRE_ID) FROM movie_genre mg WHERE mg.MOVIE_ID = m.ID) as GENRES,
+       (SELECT GROUP_CONCAT(ma.ACTOR_ID) FROM movie_actor ma WHERE m.ID = ma.MOVIE_ID) as ACTORS
+		FROM movie m
+	     INNER JOIN director d on m.DIRECTOR_ID = d.ID";
+	$result=mysqli_query($database, $query);
+	if (!$result)
+	{
+		$error=mysqli_errno($database)." : ".mysqli_error($database);
+		trigger_error($error, E_USER_ERROR);
+	}
+	$moviesList=[];
+
+	if ($code)
+	{
+		$query .= "	INNER JOIN movie_genre g on m.ID = g.MOVIE_ID INNER JOIN genre g2 on g.GENRE_ID = g2.ID AND g2.CODE='$code'";
+		$result=mysqli_query($database, $query);
+		if (!$result)
+		{
+			$error=mysqli_errno($database)." : ".mysqli_error($database);
+			trigger_error($error, E_USER_ERROR);
+		}
+	}
+	while($row = mysqli_fetch_assoc($result))
+	{
+		$moviesList[]=[
+			'id'=>$row['ID'],
+			'title'=>$row['TITLE'],
+			'original-title'=>$row['ORIGINAL_TITLE'],
+			'description'=>$row['DESCRIPTION'],
+			'duration'=>$row['DURATION'],
+			'age_restriction'=>$row['AGE_RESTRICTION'],
+			'rating'=>$row['RATING'],
+			'director'=>$row['DIRECTOR'],
+			'genres'=>$row['GENRES'],
+			'actors'=>$row['ACTORS']
+		];
+	}
+	foreach ($moviesList as $item=>&$gen)
+	{
+		$gen['genres']=parseGenre($gen['genres'], $genres);
+	}
+	return $moviesList;
+}
+function parseGenre(string $moviesGenres, array $genres): array
+{
+	$moviesGenresArray=explode(",", $moviesGenres);
+	return array_map(static function($id) use($genres) {
+		return $genres[$id];
+	}, $moviesGenresArray);
+}
+
+function getMovieFromDBByID(mysqli $database, int $id)
+{
+
+}

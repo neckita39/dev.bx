@@ -4,7 +4,7 @@
 /** @var string $title */
 /** @var string $content */
 /** @var array $config */
-require_once "./data/movies.php";
+require_once "./data/db_init.php";
 require_once "./lib/help-functions/help-func.php";
 require_once "./lib/filter-functions/filter-functions.php";
 require_once "./lib/template-functions/template-functions.php";
