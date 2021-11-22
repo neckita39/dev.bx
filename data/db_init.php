@@ -1,13 +1,13 @@
 <?php
-function connectToDatabase(array $connectionData): mysqli
+function connectToDatabase(array $config): mysqli
 {
 	$database=mysqli_init();
 	$connectionResult=mysqli_real_connect(
 		$database,
-		$connectionData['host'],
-		$connectionData['username'],
-		$connectionData['password'],
-		$connectionData['dbName']
+		$config['db']['host'],
+		$config['db']['username'],
+		$config['db']['password'],
+		$config['db']['dbName']
 	);
 	if(!$connectionResult)
 	{
