@@ -3,6 +3,7 @@
 /** @var array $genres */
 /** @var array $config */
 /** @var array $genres */
+declare(strict_types=1);
 require_once "./data/db_init.php";
 require_once "./lib/help-functions/help-func.php";
 require_once "./lib/db-functions/db-functions.php";

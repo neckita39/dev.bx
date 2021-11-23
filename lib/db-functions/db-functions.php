@@ -51,21 +51,17 @@ function getQuery(): string
 function getMovies(mysqli $database, array $genres, string $code = null): array
 {
 	$query = getQuery();
+	if ($code)
+	{
+		$code=mysqli_real_escape_string($database, $code);
+		$query .= "	INNER JOIN movie_genre g on m.ID = g.MOVIE_ID INNER JOIN genre g2 on g.GENRE_ID = g2.ID AND g2.CODE='$code'";
+	}
+
 	$result = mysqli_query($database, $query);
 	if (!$result)
 	{
 		$error = mysqli_errno($database) . " : " . mysqli_error($database);
 		trigger_error($error, E_USER_ERROR);
-	}
-	if ($code)
-	{
-		$query .= "	INNER JOIN movie_genre g on m.ID = g.MOVIE_ID INNER JOIN genre g2 on g.GENRE_ID = g2.ID AND g2.CODE='$code'";
-		$result = mysqli_query($database, $query);
-		if (!$result)
-		{
-			$error = mysqli_errno($database) . " : " . mysqli_error($database);
-			trigger_error($error, E_USER_ERROR);
-		}
 	}
 	$moviesList=[];
 	while ($row = mysqli_fetch_assoc($result))
@@ -82,18 +78,16 @@ function getMovies(mysqli $database, array $genres, string $code = null): array
 			'genres' => $row['GENRES'],
 		];
 	}
-	foreach ($moviesList as $item => &$gen)
+	foreach ($moviesList as $item => $gen)
 	{
-		$gen['genres'] = parseGenre($gen['genres'], $genres);
+		$moviesList[$item]['genres'] = parseGenre($gen['genres'], $genres);
 	}
-
 	return $moviesList;
 }
 
 function parseGenre(string $moviesGenres, array $genres): array
 {
 	$moviesGenresArray = explode(",", $moviesGenres);
-
 	return array_map(static function($id) use ($genres) {
 		return $genres[$id];
 	}, $moviesGenresArray);
@@ -109,7 +103,7 @@ function parseActors(string $movieActors, array $actors): array
 
 function getMovieFromDBByID(mysqli $database, int $id, array $actors): array
 {
-	$query = getQuery();
+	$query = getQuery()."	WHERE m.ID='$id'";
 	$result = mysqli_query($database, $query);
 	if (!$result)
 	{
@@ -117,8 +111,6 @@ function getMovieFromDBByID(mysqli $database, int $id, array $actors): array
 		trigger_error($error, E_USER_ERROR);
 	}
 
-	$query .= "	WHERE m.ID='$id'";
-	$result = mysqli_query($database, $query);
 	if (!$result)
 	{
 		$error = mysqli_errno($database) . " : " . mysqli_error($database);
@@ -140,9 +132,9 @@ function getMovieFromDBByID(mysqli $database, int $id, array $actors): array
 			'actors' => $row['ACTORS'],
 		];
 	}
-	foreach ($moviesList as $item => &$act)
+	foreach ($moviesList as $item => $act)
 	{
-		$act['actors'] = parseActors($act['actors'], $actors);
+		$moviesList[$item]['actors'] = parseActors($act['actors'], $actors);
 	}
 	return $moviesList;
 }
