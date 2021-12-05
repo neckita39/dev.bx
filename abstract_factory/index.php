@@ -4,7 +4,7 @@
 
 spl_autoload_register(function ($class)
 {
-	include __DIR__ . '/' . str_replace("\\", "/", $class) . '.php';
+	include __DIR__ . 'index.php/' . str_replace("\\", "/", $class) . '.php';
 });
 
 $archer=new \Army\Weapon\ArcherWeapon();
