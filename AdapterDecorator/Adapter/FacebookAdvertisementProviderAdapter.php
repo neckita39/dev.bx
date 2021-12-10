@@ -10,7 +10,6 @@ use Service\AdvertisementProviderInterface;
 
 class FacebookAdvertisementProviderAdapter implements AdvertisementProviderInterface
 {
-
 	public function publicate(Advertisement $advertsement): AdvertisementResponse
 	{
 		$facebookAdvertisement=new FacebookAdvertisement();

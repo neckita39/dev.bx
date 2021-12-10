@@ -6,7 +6,7 @@ spl_autoload_register(function ($class) {
 
 $advertisement = (new \Entity\Advertisement())
 ->setBody("Реклама на Facebook");
-
+$advertisement;
 $display= new \Service\AdvDisplay($advertisement);
 $display->display();
 $display= new \Decorator\BeautifulDisplayDecorator($display);
